@@ -209,7 +209,12 @@ module XML::XMLRPC
                                     type.content.strip.to_f
                                 when 'datetime.iso8601'
                                     # Looks like this: 19980717T14:08:55
-                                    DateTime.strptime(type.content.strip, "%Y%m%dT%T")
+                                    begin
+                                      DateTime.strptime(type.content.strip, "%Y%m%dT%T")
+                                    rescue
+                                      # If we can't successfully parse the date, leave it as a string.
+                                      type.content.strip
+                                    end
                                 when 'base64'
                                     Base64.decode64(type.content.strip)
                                 when 'struct'
