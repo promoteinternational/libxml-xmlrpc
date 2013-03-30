@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "libxml-xmlrpc"
-  s.version = "0.1.5"
+  s.version = "0.1.5.patch1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Erik Hollensbe"]
@@ -13,6 +13,12 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "libxml-tools"
   s.rubygems_version = "2.0.0"
   s.summary = "Provides a alternative and faster XML-RPC layer through libxml's parsing framework"
+  s.files = [
+    'lib/xml/libxml/xmlrpc/builder.rb',
+    'lib/xml/libxml/xmlrpc/client.rb',
+    'lib/xml/libxml/xmlrpc/parser.rb',
+    'lib/xml/libxml/xmlrpc.rb'
+  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 1
