@@ -185,6 +185,12 @@ module XML
                 end
             end
 
+            module Integer
+                def self.generate(arg)
+                    "<int>#{arg}</int>"
+                end
+            end
+
             module Fixnum
                 def self.generate(arg)
                     "<int>#{arg}</int>"
